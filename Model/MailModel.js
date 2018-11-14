@@ -1,29 +1,20 @@
-const mongoose = require('mongoose')
- 
-const Schema = mongoose.Schema
-
-var mailSchema = new 
+const 
+    mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
+    mailSchema = new 
           Schema(
           {
-            user: {
+            token:{
                 type: String,
-                required: 'Enter your username'
-              },    
-            pass: {
-                type: String,
-                required: 'Enter a valid password'
-              },
-            from: {
-                type: String,
-                required: 'Enter mail from message will be sent'
-              },
+                required: 'Enter valid token.'
+              }
             to: {
                 type: String,
-                required: 'Enter mail to which message will be sent'
+                required: 'Enter mail to which message will be sent.'
               },
             service: {
                 type: String,
-                required: 'Enter service mail type'
+                required: 'Enter service mail type.'
               },
             subject: {
                 type: String

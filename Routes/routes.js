@@ -3,6 +3,7 @@ module.exports = function(app){
 
 	const 
 		mailController = require('../Control/MailController'),
+		userMailController = require('../Control/UserMailModel')
 		interviewDataController = require('../Control/InterviewDataController')
 
 	app.route('/').get( 
@@ -11,6 +12,14 @@ module.exports = function(app){
 		}
 	);
 
+	app.route('/register')
+			.get(
+				userMailController.listAllUsers
+			)
+			.post(
+				userMailController.createUser
+			)
+
 	app.route('/sendMail')
 			.get(
 				mailController.listAllMails
@@ -18,6 +27,7 @@ module.exports = function(app){
 			.post(
 				mailController.createMail
 			)
+
 	app.route('/interviewData')
 			.get(
 				interviewDataController.listAllInterviewData
