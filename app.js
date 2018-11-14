@@ -6,10 +6,9 @@ const
   	app = express(),
   	port = 3030
   	
-
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/Maildb')
-
+mongoose.connect('mongodb://localhost/InterviewAPPDb')
+  	
 app.use(
 	bodyParser.urlencoded(
 			{ 
