@@ -1,5 +1,4 @@
-const mongoose = require('mongoose'),
-  Mail = mongoose.model('mail')
+const Mail = require('../Model/MailModel')
 
 exports.createMail = function(req, res) {
   const newMail = new Mail(req.body)
