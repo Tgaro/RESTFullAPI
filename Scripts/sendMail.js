@@ -1,27 +1,32 @@
 module.exports = {sendMail};
 
-function sendMail(tokenId, to, service, subject, text){
+async function sendMail(tokenId, to, service, subject, text){
 
   const userMail = require('../Model/UserMailModel')
+  let userName = ''
+  let userPass = ''
 
-  const userInfo = userMail.find(
-                          {token: "\"" + tokenId + "\""},
-                          function(err, userInfo){
-                            err 
-                          }
-                        )
+await userMail.find(
+              {token: tokenId},
+              function(err, userInfo){
+                  if(!err){
+                    userName = userInfo[0].user
+                    userPass = userInfo[0].pass
+                  }
+                }
+            )
 
   const nodemailer = require('nodemailer');
   const transporter = nodemailer.createTransport({
       service: service,
       auth: {
-          user: user,
-          pass: pass
+          user: userName,
+          pass: userPass
       }
   });
 
   const mailOptions = {
-    from: from,
+    from: userName,
     to: to,
     subject: subject,
     text: text

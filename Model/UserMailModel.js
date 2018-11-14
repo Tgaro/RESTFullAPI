@@ -5,7 +5,7 @@ const
 				{
 					token: {
 						type: String
-					}
+					},
 					user: {
                 		type: String,
                 		required: 'Enter your username'
@@ -14,10 +14,6 @@ const
 		                type: String,
 		                required: 'Enter a valid password'
 		              },
-		            from: {
-		                type: String,
-		                required: 'Enter mail from message will be sent.'
-		              }
 				}
 			)
 module.exports = mongoose.model('userMail', UserMail)

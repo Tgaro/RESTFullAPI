@@ -3,7 +3,7 @@ module.exports = function(app){
 
 	const 
 		mailController = require('../Control/MailController'),
-		userMailController = require('../Control/UserMailModel')
+		userMailController = require('../Control/UserMailController')
 		interviewDataController = require('../Control/InterviewDataController')
 
 	app.route('/').get( 

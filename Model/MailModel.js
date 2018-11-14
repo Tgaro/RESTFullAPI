@@ -7,7 +7,7 @@ const
             token:{
                 type: String,
                 required: 'Enter valid token.'
-              }
+              },
             to: {
                 type: String,
                 required: 'Enter mail to which message will be sent.'
