@@ -7,7 +7,7 @@ const
   	port = 3030
   	
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/InterviewAPPDb')
+mongoose.connect('mongodb://localhost/InterviewAPPDb', { useNewUrlParser: true })
   	
 app.use(
 	bodyParser.urlencoded(
