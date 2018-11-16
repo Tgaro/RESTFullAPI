@@ -7,7 +7,11 @@ exports.createUser = function(req, res){
 			function(err, user){
 				if(err)
 					res.send(err)
-				res.json(user)
+				res.render('pages/registerConfirmation', {
+					token: req.body.token,
+					username: req.body.user
+				}
+				)
 			}
 		)
 	}

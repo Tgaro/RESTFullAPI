@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../partials/head %>
+</head>
+<body>
+
+	<header>
+		<% include ../partials/header %>
+	</header>
+
+	<main>
+		<div>
+			<h2>Register your user account</h2>
+
+			<form action="register" method="POST">
+
+				<div class="row">
+			        <div class="input-field col s6">
+			          <input id="user" name="user" type="text" class="validate">
+			          <label for="user">User</label>
+			        </div>
+			    </div>
+
+			    <div class="row">
+			        <div class="input-field col s6">
+			          <input id="pass" name="pass" type="password" class="validate">
+			          <label for="pass">Password</label>
+			        </div>
+			    </div>
+
+		        <div class="row">
+			        <div class="input-field col s6">
+			          <input id="token" name="token" type="text" class="validate">
+			          <label for="token">Token</label>
+			        </div>
+			    </div>
+
+	            <button id="btnRegister" class="btn btn-lg up-btn" type="submit">Register</button>
+
+            </form>
+		</div>
+	</main>
+
+	<footer>
+		<% include ../partials/footer %>
+	</footer>
+	
+</body>
+</html>

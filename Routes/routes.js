@@ -6,15 +6,18 @@ module.exports = function(app){
 		userMailController = require('../Control/UserMailController')
 		interviewDataController = require('../Control/InterviewDataController')
 
-	app.route('/').get( 
-		function(req, res){
-			res.send('Building a NodeJs API. Use /sendMail to send mail or /interviewData to retrive create new data or retrieve what already exists.')
-		}
-	);
+	app.route('/')
+			.get( 
+				function(req, res){
+					res.render('pages/index')
+				}
+			)
 
 	app.route('/register')
 			.get(
-				userMailController.listAllUsers
+				function(req, res){
+					res.render('pages/register')
+				}
 			)
 			.post(
 				userMailController.createUser
@@ -40,14 +43,15 @@ module.exports = function(app){
 			.get(
 				interviewDataController.listInterviewDataByTheme
 			)
+
 	app.route('/interviewData/person/:personId')
-		.get(
-			interviewDataController.listInterviewDataByPersonId
-		)
-		.put(
-			interviewDataController.updateInterviewData
-		)
-		.delete(
-			interviewDataController.deleteInterviewData
-		)
+			.get(
+				interviewDataController.listInterviewDataByPersonId
+			)
+			.put(
+				interviewDataController.updateInterviewData
+			)
+			.delete(
+				interviewDataController.deleteInterviewData
+			)
 }
