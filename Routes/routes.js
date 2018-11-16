@@ -30,23 +30,15 @@ module.exports = function(app){
 				userMailController.createUser
 			)
 
-	app.route('/user')
-			.get(
-				userMailController.listAllUsers
-			)
-
-	app.route('/user/:token')
-			.get(
-				userMailController.listUserByToken
-			)
-
 	app.route('/sendMail')
 			.get(
-				mailController.listAllMails
+				function(req, res){
+					res.render('pages/sendMail')
+				}
 			)
 			.post(
 				mailController.createMail
-			)
+			)	
 
 	app.route('/interviewData')
 			.get(
@@ -70,5 +62,15 @@ module.exports = function(app){
 			)
 			.delete(
 				interviewDataController.deleteInterviewData
+			)
+
+	app.route('/user')
+			.get(
+				userMailController.listAllUsers
+			)
+
+	app.route('/user/:token')
+			.get(
+				userMailController.listUserByToken
 			)
 }
