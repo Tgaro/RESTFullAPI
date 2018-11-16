@@ -26,3 +26,14 @@ exports.listAllUsers = function(req,res){
 			}
 		)
 	}
+
+exports.listUserByToken = function(req,res){
+	mailUser.find(
+			{token: req.params.token}, 
+			function(err, user){
+				if(err)
+					res.send(err)
+				res.json(user)
+			}
+		)
+	}

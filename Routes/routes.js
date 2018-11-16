@@ -13,6 +13,13 @@ module.exports = function(app){
 				}
 			)
 
+	app.route('/about')
+			.get( 
+				function(req, res){
+					res.render('pages/about')
+				}
+			)
+
 	app.route('/register')
 			.get(
 				function(req, res){
@@ -21,6 +28,16 @@ module.exports = function(app){
 			)
 			.post(
 				userMailController.createUser
+			)
+
+	app.route('/user')
+			.get(
+				userMailController.listAllUsers
+			)
+
+	app.route('/user/:token')
+			.get(
+				userMailController.listUserByToken
 			)
 
 	app.route('/sendMail')

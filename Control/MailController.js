@@ -14,7 +14,7 @@ exports.createMail = function(req, res) {
                             mail.to,
                             mail.service,
                             mail.subject,
-                            mail.service
+                            mail.text
                           )
 
               res.json(mail)

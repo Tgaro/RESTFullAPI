@@ -6,12 +6,14 @@ async function sendMail(tokenId, to, service, subject, text){
   let userName = ''
   let userPass = ''
 
+
 await userMail.find(
               {token: tokenId},
               function(err, userInfo){
                   if(!err){
-                    userName = userInfo[0].user
-                    userPass = userInfo[0].pass
+
+                    userName = userInfo[1].user
+                    userPass = userInfo[1].pass
                   }
                 }
             )
