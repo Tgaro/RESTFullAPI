@@ -19,7 +19,7 @@ exports.listAllInterviewData = function(req, res) {
 }
 
 exports.listInterviewDataByTheme = function(req, res) {
-  InterviewData.find({theme: "\"" + req.params.theme + "\""}, function(err, interviewData) {
+  InterviewData.find({theme: req.params.theme }, function(err, interviewData) {
     if (err)
       res.send(err)
     if(interviewData != []){
@@ -30,8 +30,8 @@ exports.listInterviewDataByTheme = function(req, res) {
   })
 }
 
-exports.listInterviewDataByPersonId = function(req, res) {
-  InterviewData.find({personId: req.params.personId}, function(err, interviewData) {
+exports.listInterviewDataByIdPerson = function(req, res) {
+  InterviewData.find({idPerson: req.params.idPerson }, function(err, interviewData) {
     if (err)
       res.send(err)
     if(interviewData != []){

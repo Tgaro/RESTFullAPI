@@ -53,9 +53,9 @@ module.exports = function(app){
 				interviewDataController.listInterviewDataByTheme
 			)
 
-	app.route('/interviewData/person/:personId')
+	app.route('/interviewData/person/:idPerson')
 			.get(
-				interviewDataController.listInterviewDataByPersonId
+				interviewDataController.listInterviewDataByIdPerson
 			)
 			.put(
 				interviewDataController.updateInterviewData
