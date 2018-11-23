@@ -1,7 +1,7 @@
-const 
-    mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
-    mailSchema = new 
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+    
+const mailSchema = new 
           Schema(
           {
             token:{

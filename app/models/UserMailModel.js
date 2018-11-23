@@ -1,7 +1,7 @@
-const 
-	mongoose = require('mongoose'),
-	Schema = mongoose.Schema
-	UserMail = new Schema(
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
+const UserMail = new Schema(
 				{
 					token: {
 						type: String
